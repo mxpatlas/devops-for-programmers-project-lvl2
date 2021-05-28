@@ -1,0 +1,17 @@
+---
+- 
+  name: Start redmine container
+  community.docker.docker_container:
+    name: "devops_redmine"
+    recreate: yes
+    image: "redmine:{{ redmine_version }}-alpine"
+    env:
+      REDMINE_DB_POSTGRES: "{{ redmine_pg_host }}"
+      REDMINE_DB_PORT: "{{ redmine_pg_port }}"
+      REDMINE_DB_DATABASE: "{{ redmine_pg_db }}"
+      REDMINE_DB_USERNAME: "{{ redmine_pg_user }}"
+      REDMINE_DB_PASSWORD: "{{ redmine_pg_password }}"
+      REDMINE_SECRET_KEY_BASE: "{{ redmine_secret }}"
+    published_ports:
+      - "{{ redmine_listen }}:{{ redmine_port }}:3000" # host addr : host port : container port
+  tags: [ "redmine", "container" ]
