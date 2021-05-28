@@ -24,4 +24,5 @@
   apt:
     pkg: python3-docker
     update_cache: yes
+    state: latest
   when: ansible_os_family == 'Debian'
