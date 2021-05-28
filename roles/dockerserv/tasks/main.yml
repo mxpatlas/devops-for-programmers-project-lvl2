@@ -11,12 +11,12 @@
 - name: Install Pip
   yum:
     name: python3-pip
-  become: true
+  #become: true
   when: ansible_os_family == 'RedHat'
   tags: [ "dockerserv", "install" ]
 - name: Install Python SDK
   pip:
     name: docker
-  become: true
+  #become: true
   tags: [ "dockerserv", "install" ]
 
