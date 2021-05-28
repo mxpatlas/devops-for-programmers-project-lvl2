@@ -8,21 +8,28 @@
 #    name: geerlingguy.docker
 #  tags: [ "dockerserv" ]
 ###############################################################################
-- name: Install Pip
+- name: Install Pip CentOS
   yum:
     name: python3-pip
   #become: true
   when: ansible_os_family == 'RedHat'
-  tags: [ "dockerserv", "install" ]
+  tags: [ "dockerserv", "install", "centos" ]
+- name: Install Pip Ubuntu
+  apt:
+    pkg: python3-pip
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Debian'
+  tags: [ "dockerserv", "install", "ubuntu" ]
 - name: Install Python SDK
   pip:
     name: docker
   #become: true
-  when: ansible_os_family == 'RedHat'
+  #when: ansible_os_family == 'RedHat'
   tags: [ "dockerserv", "install" ]
-- name: "Install Python SDK Ubuntu/Debian"       
-  apt:
-    pkg: python3-docker
-    update_cache: yes
-    state: latest
-  when: ansible_os_family == 'Debian'
+#- name: "Install Python SDK Ubuntu/Debian"       
+#  apt:
+#    pkg: python3-docker
+#    update_cache: yes
+#    state: latest
+#  when: ansible_os_family == 'Debian'
