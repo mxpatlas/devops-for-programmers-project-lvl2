@@ -23,5 +23,5 @@
 - name: "Install Python SDK Ubuntu/Debian"       
   apt:
     pkg: python3-docker
-    #update_cache: yes
+    update_cache: yes
   when: ansible_os_family == 'Debian'
