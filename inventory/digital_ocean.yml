@@ -1,0 +1,7 @@
+node1 ansible_host=159.203.189.53 ansible_port=22 ansible_user='root' ansible_ssh_private_key_file='/home/user/.ssh/mxpatlas/id_rsa'
+node2 ansible_host=68.183.113.213 ansible_port=22 ansible_user='root' ansible_ssh_private_key_file='/home/user/.ssh/mxpatlas/id_rsa'
+
+[dockerhosts]
+node1
+node2
+

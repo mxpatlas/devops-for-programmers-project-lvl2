@@ -1,0 +1,10 @@
+---
+redmine_listen: "127.0.0.1"
+redmine_port: 7777
+redmine_version: "4.2.1"
+redmine_pg_host: ""
+redmine_pg_port: 5432
+redmine_pg_db: ""
+redmine_pg_user: ""
+redmine_pg_password: ""
+redmine_secret: "123"

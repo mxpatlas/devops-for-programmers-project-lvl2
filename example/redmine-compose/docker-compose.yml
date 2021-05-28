@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  redmine:
+    image: redmine:4.2.1-alpine
+    container_name: redmine_application
+    restart: always
+    ports:
+      - 7777:3000
+    env_file:
+      - .env.devel
+    depends_on:
+      - redminedb
+
+  redminedb:
+    image: postgres:13.3
+    container_name: redmine_postgres
+    env_file:
+      - .env.devel
