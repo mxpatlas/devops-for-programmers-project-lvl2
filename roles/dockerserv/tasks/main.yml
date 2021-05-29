@@ -9,14 +9,14 @@
 #  tags: [ "dockerserv" ]
 ###############################################################################
 -
-   name: Install Pip CentOS
+  name: Install Pip CentOS
   yum:
     name: python3-pip
   #become: true
   when: ansible_os_family == 'RedHat'
   tags: [ "dockerserv", "install", "centos" ]
 -
-   name: Install Pip Ubuntu
+  name: Install Pip Ubuntu
   apt:
     pkg: python3-pip
     update_cache: yes
