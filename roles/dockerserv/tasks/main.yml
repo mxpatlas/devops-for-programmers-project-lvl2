@@ -12,7 +12,6 @@
   name: Install Pip CentOS
   yum:
     name: python3-pip
-  #become: true
   when: ansible_os_family == 'RedHat'
   tags: [ "dockerserv", "install", "centos" ]
 -
@@ -27,13 +26,4 @@
   name: Install Python SDK
   pip:
     name: docker
-  #become: true
-  #when: ansible_os_family == 'RedHat'
   tags: [ "dockerserv", "install" ]
-#-
-#  name: "Install Python SDK Ubuntu/Debian"
-#  apt:
-#    pkg: python3-docker
-#    update_cache: yes
-#    state: latest
-#  when: ansible_os_family == 'Debian'
