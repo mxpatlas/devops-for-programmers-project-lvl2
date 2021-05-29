@@ -27,6 +27,11 @@
   #become: true
   #when: ansible_os_family == 'RedHat'
   tags: [ "dockerserv", "install" ]
+- name: Install pan-os-python
+  pip:
+    name: pan-os-python
+  when: ansible_os_family == 'Debian'
+  tags: [ "dockerserv", "install", "ubuntu" ]
 #- name: "Install Python SDK Ubuntu/Debian"       
 #  apt:
 #    pkg: python3-docker
