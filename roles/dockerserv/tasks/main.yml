@@ -20,7 +20,7 @@
   apt:
     pkg: python3-pip
     update_cache: yes
-    state: latest
+    state: present
   when: ansible_os_family == 'Debian'
   tags: [ "dockerserv", "install", "ubuntu" ]
 -
