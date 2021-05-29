@@ -14,4 +14,5 @@
       REDMINE_SECRET_KEY_BASE: "{{ redmine_secret }}"
     published_ports:
       - "{{ redmine_listen }}:{{ redmine_port }}:3000" # host addr : host port : container port
+    container_default_behavior: compatibility
   tags: [ "redmine", "container" ]

@@ -24,12 +24,6 @@
   when: ansible_os_family == 'Debian'
   tags: [ "dockerserv", "install", "ubuntu" ]
 -
-  name: Install pan-os-python
-  pip:
-    name: pan-os-python
-  when: ansible_os_family == 'Debian'
-  tags: [ "dockerserv", "install", "ubuntu" ]
--
   name: Install Python SDK
   pip:
     name: docker
