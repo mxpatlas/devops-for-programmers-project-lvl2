@@ -65,4 +65,17 @@ make VAULT_PASS_FILE="./my_password" deploy
 1. Прописываем изменения в `requirements.txt`
 2. Запускаем `make vendor-galaxy`
 
+## Работа с ansible-vault
 
+Получить зашифрованное значение переменной
+```
+make VAR_NAME="redmine_pg_password" encrypt-var
+```
+Значение переменной читается из stdin. Для завершения ввода надо дважды нажать ctrl+d.
+ВАЖНО: **не надо жать <ENTER> после ввода значения переменной, иначе символ новой строки будет 
+добавлен к шифрованному содержимому**
+
+Посмотреть значение переменной
+```
+make VAR_NAME="redmine_port" dump-var
+```
