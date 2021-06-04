@@ -47,6 +47,15 @@ datadog_checks:
         url: http://localhost:7777
         timeout: 5
         method: GET
+datadog_config:
+  logs_enabled: true
+  listeners:
+    - name: docker
+  config_providers:
+    - name: docker
+      polling: true
+  logs_config:
+    container_collect_all: true
 
 #logs_enabled: true
 #listeners:
