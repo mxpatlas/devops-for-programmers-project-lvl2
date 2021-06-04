@@ -26,12 +26,12 @@ redmine запускается в виде docker-контейнера на ка
   Плейбук ожидает что пароль лежит в `$HOME/.secret/vault.do_mxpatlas`
   При первом запуске необходимо этот файл создать, записать туда пароль, и выставить права доступа
   на чтение только для владельца:
-```bash
-mkdir ~/.secret
-chmod 0700 ~/.secret
-touch ~/.secret/vault.do_mxpatlas
-chmod 0600 ~/.secret/vault.do_mxpatlas
-```
+	```bash
+	mkdir ~/.secret
+	chmod 0700 ~/.secret
+	touch ~/.secret/vault.do_mxpatlas
+	chmod 0600 ~/.secret/vault.do_mxpatlas
+	```
 Имя файла с паролем можно использовать свое, для этого надо при запуске make переопределить 
 переменную `VAULT_PASS_FILE`
 3. Необходимо настроить авторизацию для всех серверов перечисленных в ./inventory. Если 
@@ -62,7 +62,7 @@ make VAULT_PASS_FILE="./my_password" deploy
 
 ## При необходимости обновить код коллекции из Ansible Galaxy
 
-1. Прописываем изменения в `requiremenst.txt`
+1. Прописываем изменения в `requirements.txt`
 2. Запускаем `make vendor-galaxy`
 
 
