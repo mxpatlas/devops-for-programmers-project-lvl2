@@ -1,11 +1,7 @@
 ---
-###############################################################################
-# For hosts with no docker installed
-###############################################################################
-#roles:
-#  - name: geerlingguy.docker
-#    version: 3.1.2
-###############################################################################
+roles:
+  - name: datadog.datadog
+    version: 4.10.0
 collections:
   - name: community.docker
     version: 1.5.0

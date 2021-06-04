@@ -20,4 +20,39 @@ redmine_secret: !vault |
           65346436376133613539306237363938313630316465373539663263356633623862353266393031
           3766633537383333660a303363326334313663653631343632646533376465613862333432363231
           3039
+datadog_api_key: !vault |
+          $ANSIBLE_VAULT;1.2;AES256;do_mxpatlas
+          35393637316162653339393533343933306165373337643232633263626333393365646435356433
+          6365396665663434313166633661363764326335656463310a386232613661393164313735396335
+          65373839333666373131386537363164393935323233633663643431393135346664386461306139
+          6133353735656463620a326433306265623736643035383237353964366636343835663164666432
+          31313365626261333134343932366436646666346565376630643066396230633135356631623735
+          3333383933636639393731353064326266386264363138353765
+datadog_site: "datadoghq.com"
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: ssh
+        search_string: ['ssh', 'sshd']
+      - name: syslog
+        search_string: ['rsyslog']
+        cpu_check_interval: 0.2
+        exact_match: true
+        ignore_denied_access: true
+  http_check:
+    init_config:
+    instances:
+      - name: Application health check status
+        url: http://localhost:7777
+        timeout: 5
+        method: GET
 
+#logs_enabled: true
+#listeners:
+#  - name: docker
+#config_providers:
+#  - name: docker
+#    polling: true
+#logs_config:
+#  container_collect_all: true

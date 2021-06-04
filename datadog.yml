@@ -1,0 +1,5 @@
+---
+- hosts: dockerhosts
+  roles:
+    - { role: datadog.datadog, become: yes, tags: [ "datadog" ] }
+
